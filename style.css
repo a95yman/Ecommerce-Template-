@@ -1,0 +1,581 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(140deg, #edeaf0,#c0b6ca);
+}
+#container{
+    width: 85%;
+    height: 85%;
+    background: #3e3746;
+    box-shadow: rgba(62,55,70,1) 20px 20px 50px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+nav{
+    width: 60px;
+    height: 100%;
+    position: relative;
+}
+main{
+    width: 70%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    overflow-y: auto;
+}
+#right{
+    width: calc(100% - 70% - 60px);
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+#right #search-bar input{
+    width: calc(100% - 110px);
+}
+#right #search-bar img{
+    width: 30px;
+    height: 30px;
+}
+#right #search-bar{
+    width: 100%;
+    height: 50px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#right .inner{
+    width: 100%;
+    flex: 1;
+    margin-top: 20px;
+    overflow-y: auto;
+}
+#right .inner h2{
+    color: white;
+    font-size: 14px;
+    margin-left: 20px;  
+    margin-bottom: 20px;
+}
+.purchase:hover{
+    color: #333;
+    background: white;
+}
+.purchase{
+   width: 90%;
+    height: 50px;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 100%;
+    opacity: 0;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    color: white;
+    user-select: none;
+    transition: 0.5s;
+}
+.purchase .ver{
+    flex: 1;
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+}
+.purchase .ver a{
+    font-size: 13px;
+}
+.purchase .ver div{
+    display: flex;
+    align-items: center;
+    font-size: 10.5px;
+}
+.purchase img{
+    width: 33px;
+    margin-left: 10px;
+    border-radius: 50%;
+    height: 33px;
+    border: 2px solid white;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    display: block;
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+}
+#cursor{
+    height: 60px;
+    width: 3px;
+    top: -60;
+    position: absolute;
+    right: 0;
+    transition: 0.5s;
+}
+#cursor #inner{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+#cursor #inner div{
+    width: 20px;
+    height: 20px;
+    background: white;
+    margin-left: -50%;
+    border-radius: 50% 50% 20%;
+    transform: rotate(90deg);
+    position: relative;
+    animation: animation1 1s linear infinite forwards;
+}
+@keyframes animation1{
+    0%{
+        left: 0;
+    }
+    25%{
+        left: 5;
+    }
+    50%{
+        left: 0;
+    }
+    75%{
+        left: -5;
+    }
+    100%{
+        left: 0;
+    }
+}
+nav ul li img{
+    width: 17px;
+    height: 17px;
+}
+nav ul li:first-child img{
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+}
+nav ul li:last-child{
+    background: white;
+    position: absolute;
+    bottom: 20px;
+    cursor: pointer;
+}
+nav ul li:last-child img{
+    width: 20px;
+    height: 20px;
+}
+nav ul li:hover{
+    background: rgba(0,0,0,0.3);
+}
+nav ul li:last-child:hover{
+    background: white;
+}
+header h2{
+    margin-left: 20px;
+    font-size: 18px;
+    color: white;
+}
+header h1{
+    color: white;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+header a{
+    color: white;
+    margin-left: 20px;
+    font-size: 13px;
+}
+header{
+    width: 90%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url(assets/bg.jpg) no-repeat;
+    margin: 0 auto;
+    margin-top: 40px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: rgba(243,236,138,0.2) 10px 10px 40px;
+}
+header #shop{
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    backdrop-filter:blur(20px) saturate(180%);
+    right: 50px;
+    background: rgba(255,255,255,0.7);
+    box-shadow: rgba(243,138,198,0.3) 10px 10px 40px;
+}
+header #shop .top img{
+    width: 100px;
+    height: 100px;
+}
+header #shop .top{
+    width: 180px;
+    box-shadow: rgba(0,0,0,0.2) 10px 10px 20px;
+    height: 160px;
+    display: grid;
+    border-radius: 5px;
+    place-items: center;
+    background: linear-gradient(140deg, #fff,#fcdcf0);
+}
+header #shop .btn{
+    width: 180px;
+    user-select: none;
+    box-shadow: rgba(0,0,0,0.2) 10px 10px 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 40px;
+    margin-top: 15px;
+    background: linear-gradient(140deg, #6e74f4,#f46ec8,#6e74f4); 
+    position: relative;
+    transition: 0.5s;
+}
+header #shop .btn a{
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+header #shop .btn:hover a{
+    color: #333;
+}
+header #shop .btn:hover div{
+    opacity: 0;
+}
+header #shop .btn div{
+    width: 100%;
+    height: 80%;
+    background: #fff; 
+    position: absolute;
+    left: 0%;
+     top: 0%;
+    transform-origin: center;
+    animation: animation2 3s linear infinite forwards;
+    transition: 0.5s;
+}
+@keyframes animation2{
+    from{
+        transform: rotate(0deg) ;
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+header #shop .btn:after{
+    content: '';
+    position: absolute;
+    width: 97%;
+    border-radius: inherit;
+    height: 85%;
+    background: linear-gradient(140deg, #6e74f4,#f46ec8,#6e74f4); 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+}
+header #shop .btn:hover:after{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(140deg, #fff,#fcdcf0);
+}
+.cover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+    opacity: 0.3;
+    background: linear-gradient(140deg, #edeaf0,#c0b6ca);
+}
+header #persons {
+    margin-left: 20px;
+    margin-top: 10px;
+    position: relative;
+    user-select: none;
+    z-index: 1;
+    display: flex;
+}
+header #persons img{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transition: 0.5s;
+}
+header #persons img:nth-child(1){
+    z-index: 5;
+}
+header #persons img:nth-child(2){
+    z-index: 4;
+    left: -10px;
+    opacity: 0.9;
+}
+header #persons img:nth-child(3){
+    z-index: 3;
+    left: -20px;
+    opacity: 0.8;
+}
+header #persons img:nth-child(4){
+    z-index: 2;
+    left: -30px;
+    opacity: 0.7;
+}
+header #persons #more{
+    z-index: 1;
+    left: -20px;
+    position: relative;
+    background: white;
+    font-size: 11px;
+    color: #333;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: 0.5s;
+}
+header #persons:hover img{
+    left: 0;
+    margin-left: 5px;
+}
+header #persons:hover #more{
+    left: 0;
+    margin-left: 5px;
+}
+#cats{
+    width: 90%;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow-x: auto;
+    position: relative;
+}
+.cat{
+    display: inline-block;
+    padding: 6px;
+    user-select: none;
+    font-size: 14px;
+    color: white;
+    margin-right: 5px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #444;
+    position: relative;
+}
+#cats #arrow{
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50% 50% 20%;
+    transform: rotate(205deg);
+    position: absolute;
+    left: 0;
+    top: 40px;
+    animation: animation3 1s linear infinite forwards;
+    transition: 1s;
+}
+@keyframes animation3{
+    0%{
+        top: 40px;
+    }
+    25%{
+        top: 45px;
+    }
+    50%{
+        top: 40px;
+    }
+    75%{
+        top: 35px;
+    }
+    100%{
+        top: 40px;
+    }
+}
+
+.cat:before{
+    content: '';
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: center;
+    background: rgba(255,255,255,0.3);
+    animation: animation2 2s linear infinite forwards;
+    transition: 0.5s;
+}
+.cat:hover:before{
+    background: white;
+}
+#products{
+    width: 90%;
+    min-height: 200px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.product{
+    width: 200px;
+    height: 270px;
+    background: linear-gradient(4deg, #6e74f4, #c6f784,#58c3e3);
+    display: inline-block;
+    user-select: none;
+    margin-right: 10px;
+    overflow: hidden;
+    position: relative;
+    left: 100%;
+    opacity: 0;
+    transition: 0.5s;
+}
+.product:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.8;
+    transform-origin: center;
+    animation: animation4 2s ease-in-out infinite forwards;
+}
+.product:hover{
+    background: white;
+    box-shadow: white 5px 5px 0px;
+}
+@keyframes animation4{
+    to{
+        transform: rotate(1turn);
+    }
+}
+.product .inner{
+    position: absolute;
+    top: 50%;
+    background: #333;
+    transform: translateY(-50%);
+    width: 97%;
+    margin-left: calc((100% - 97%)/2);
+    height: 97%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.product .inner .top{
+    width: 95%;
+    height: 65%;
+    margin-top: 5px;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+.product:nth-child(1) .inner .top{
+    background: url(assets/gd1.jpeg);
+    background-size: 100% 100%;
+    transition: 0.5s;
+}
+.product:nth-child(2) .inner .top{
+    background: url(assets/gd2.jpeg);
+    background-size: 100% 100%;
+    transition: 0.5s;
+}
+.product:nth-child(3) .inner .top{
+    background: url(assets/gd3.jpeg);
+    background-size: 100% 100%;
+    transition: 0.5s;
+}
+.product:nth-child(4) .inner .top{
+    background: url(assets/gd4.jpeg);
+    background-size: 100% 100%;
+    transition: 0.5s;
+}
+.product:hover .inner .top{
+    opacity: 0.5;
+    background-size: 130% 130%;
+}
+.product .inner .top img{
+    width: 100px;
+    height: 100px;
+}
+.product .inner .bottom{
+    width: 90%;
+    flex: 1;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product .inner .bottom a:nth-child(1){
+    color: white;
+    font-size: 12px;
+}
+.product .inner .bottom a:nth-child(2){
+    color: #eee;
+    font-size: 10px;
+    margin-top: 5px;
+}
+.product .inner .bottom div{
+    color: white;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.product .inner .bottom div a{
+    display: block;
+}
+.product:last-child{
+    margin-right: 1px;
+}
+.product .inner .bottom div img{
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    background-color: white;
+    border-radius: 50%;
+}
+::-webkit-scrollbar{
+    width: 0px;
+    height: 1px;
+}
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: #fff;
+}
